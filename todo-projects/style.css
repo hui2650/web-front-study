@@ -56,20 +56,23 @@ ul.todo-list {
   list-style: none;
   margin-top: 28px;
 }
-ul.todo-list > li {
+ul.todo-list > li.todo-item {
   display: flex;
   justify-content: space-between;
   background: #f1f1f1;
   padding: 0 10px 0;
   border-radius: 8px;
 }
-li > .check-group {
+li.todo-item > .todo-left {
   display: flex;
   gap: 6px;
 }
-li > .delete-btn {
+li.todo-item > .delete-btn {
   border: none;
   cursor: pointer;
   color: red;
   font-size: 16px;
+}
+
+.todo-text.done {
 }
