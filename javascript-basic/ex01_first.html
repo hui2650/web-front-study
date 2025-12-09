@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>자바스크립트 변수 키워드</h1>
+
+
+
+    <script>
+        
+   // ======================================
+    // 1️⃣ 기본 문법
+    // ======================================
+    // 조건 ? 참일 때 실행 : 거짓일 때 실행
+    // if-else 문을 한 줄로 줄인 표현이다.
+
+    let score = 85;
+    let result = (score >= 60) ? "합격" : "불합격";
+    // 조건이 true → "합격" 선택
+
+    // ======================================
+    // 2️⃣ 중첩 삼항 연산자
+    // ======================================
+    // 여러 조건을 한 줄에 연결할 수 있다.
+    let grade = (score >= 90) ? "A" :
+                (score >= 80) ? "B" :
+                (score >= 70) ? "C" :
+                (score >= 60) ? "D" : "F";
+    // score = 85 → "B"
+
+    
+
+
+    </script>
+</body>
+</html>

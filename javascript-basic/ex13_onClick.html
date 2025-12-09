@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        background-color: rgb(245, 46, 112);
+        transform: rotate(180deg);
+        transition: all 0.5s;
+        border-radius: 16px;
+    }
+    .change {
+        background-color: pink;
+        transform: rotate(-180deg);
+        transition: all 0.5s;
+    }
+</style>
+<body>
+
+    <input type="text" oninput="showText(this.value)" placeholder='입력하세요'>
+    <p id="result"></p>
+    <div class='box change' style="width: 100px; height: 100px; margin-bottom:  10px;">
+    </div>
+    <button onclick="changeColor()">색 바꾸기</button>
+
+<script>
+    //함수를 만든다.
+    //함수: 특정한 기능이 있는 코드의 묶음
+    
+    const box = document.querySelector('.box')
+    const result = document.querySelector('#result')
+
+    const showText = (value)=> {
+        console.log(value)
+        result.innerText = value;
+    }
+
+    const changeColor = ()=>{
+        box.classList.toggle('change')
+    }
+
+
+
+</script>
+</body>
+</html>

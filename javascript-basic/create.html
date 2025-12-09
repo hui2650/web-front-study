@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //학생의 이름(name), 나이(age), 전공(major) 를
+        //속성으로 가지는 student객체를 만들고
+        //콘솔에 각 값을 출력하세요
+
+        let student = {
+            name: "태희",
+            age: "23",
+        }
+
+        console.log(student)
+
+        const car = {brand:"Hyeundai", model: "Sonata"}
+
+        //1. year 속성을 추가하여 2024 저장하기
+        //2. model 속성을 'Avante'로 수정하기
+
+        car.year = "2024";
+        car.model = "Avante";
+
+        console.log(car);
+
+
+        const scores = {kor: 85, eng: 90, math: 78}
+
+        //for ~ in 을 사용하여 과목명과 점수를 다음 형식으로 출력하라.
+        //kor : 85
+        //eng : 90
+        //math : 78
+
+        for(const s in scores){
+            console.log(`${s} : ${scores[s]}`)
+        }
+
+
+        const users = [ 
+            {name:"kim", age:20}, 
+            {name:"lee", age:26},
+            {name:"park", age:30},
+        ]
+
+        //모든 사용자의 이름만 출력하기
+        //나이가 25세 이상인 사용자만 출력하기
+        //모든 사용자의 평균 나이 구하기
+
+        for(let u in users){
+            console.log(users[u].name)
+        }
+
+        //배열에서는 for in을 안쓰는게 좋음~
+        for(let a in users){
+            if(users[a].age >= 25){
+                console.log(users[a]);
+            }
+        } 
+
+        //해답!
+        for(const v of users){
+            if(v.age >= 25){
+                console.log(v);
+            }
+        }
+
+
+        //평균구하기
+
+        const avg = users.reduce((acc, u)=> acc + u.age / users.length ,0)
+
+        console.log(avg)
+
+
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li:first-child {
+            color: red;
+        }
+        li:last-child {
+            color: yellow;
+        }
+        li:nth-child(2) {
+            color: orange;
+        }
+        p:nth-of-type(1) {
+            background: pink;
+        }
+        p:nth-of-type(2) {
+            text-decoration: underline;
+        }
+
+        /* nth-child()와 nth-of-type()의 차이
+        :nth-child() : 전체 자식 중 2번째
+        :nth-of-type() : 같은 태그(p, li)기준으로 2번째 */
+    </style>
+</head>
+<body>
+    <h2>구조 의사 클래스</h2>
+    <ul>
+        <li>첫 번째 항목</li>
+        <li>두 번째 항목</li>
+        <li>세 번째 항목</li>
+    </ul>
+
+    <p>첫 번째 문단</p>
+    <p>두 번째 문단</p>
+</body>
+</html>

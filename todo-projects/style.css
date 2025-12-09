@@ -1,0 +1,75 @@
+body {
+  background: #f8f8f8;
+}
+section.todo {
+  max-width: 600px;
+  margin: 100px auto;
+  border: 1px solid #eee;
+  box-shadow: 4px 4px 16px rgba(175, 175, 175, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 40px 0 20px;
+  border-radius: 16px;
+  background: #fff;
+}
+.todo-box {
+  min-width: 550px;
+}
+.todo-box > .todo-main > h1 {
+  margin-bottom: 30px;
+}
+.todo-input {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.todo-input > input {
+  padding: 12px 12px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  flex: 1;
+  font-size: 16px;
+}
+.todo-input > .add-btn {
+  background: rgb(62, 97, 255);
+  border-radius: 8px;
+  padding: 12px 20px;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+.empty-text {
+  text-align: center;
+  color: #888;
+}
+
+ul.todo-list {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  margin-top: 28px;
+}
+ul.todo-list > li {
+  display: flex;
+  justify-content: space-between;
+  background: #f1f1f1;
+  padding: 0 10px 0;
+  border-radius: 8px;
+}
+li > .check-group {
+  display: flex;
+  gap: 6px;
+}
+li > .delete-btn {
+  border: none;
+  cursor: pointer;
+  color: red;
+  font-size: 16px;
+}

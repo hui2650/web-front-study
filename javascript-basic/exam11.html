@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단</title>
+    <style>
+			#disp { width:300px; height:300px; background: black; color:white; }
+	</style>
+</head>
+<body>
+    <p>
+        단:
+        <input id="dan">
+        <input id="start" type="button" value="계산시작">
+        <input type="button" id="bt_show" value="숨기기">
+    </p>
+
+    <hr>
+
+    <div id="disp">
+        여기에 구구단<br/>
+        <p><!--여기에 구구단 넣을거임--></p>
+    </div>
+<script>
+    const dan = document.querySelector('#dan')
+    const startBtn = document.querySelector('#start')
+    const disp = document.querySelector('#disp > p')
+    const hideBtn = document.querySelector('#bt_show')
+
+    // input dan에 해당 숫자 입력받고 start버튼 누르면 9단까지 곱하기를 
+    // disp 안에 출력
+    
+    startBtn.addEventListener('click', ()=>{
+        //2부터 9 사이까지만 나오도록 조건
+        if(dan.value < 2 || dan.value > 9 ){
+            alert('2~9 사이만 입력해주세요')
+        }else if( isNaN(dan.value) ){ //입력받은 값이 숫자가 아닐 시 조건
+            alert('숫자만 입력해주세요')
+        }else{ //다 통과시 구구단 반환
+            disp.innerHTML =""; //시작버튼 누를 때마다 값 초기화
+            for(let i=1; i<10; i++){ //9단까지 반복
+                disp.innerHTML += `${dan.value} X ${i} = ${dan.value * i}<br/>`
+            } 
+        }
+    })
+    // hideBtn의 value가 숨기기 일시에 value를 보이기로 변경후 disp 내용 숨기기
+    hideBtn.addEventListener('click', (e)=>{
+        if(e.target.value === "숨기기"){
+            e.target.value = "보이기";
+            disp.style.display = "none";
+        }else{ // 그 반대로 하기
+            e.target.value = "숨기기";
+            disp.style.display = "block";
+        }
+    }) 
+</script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        let dog = new Object()
+
+        dog.name = '미니';
+        dog.age = '13';
+
+        let cat = {
+            name: '나비',
+            age: '2'
+        }
+
+        console.log(dog);
+        console.log(cat);
+        
+        let student = {
+            name: '함태희',
+            phoneNum: '010-4919-2650',
+            subject: ['Java&Python 풀스택', 'React기반 풀스택'],
+            isComplete: false
+        }
+        console.log(student);
+
+        //객체에 들어있는 값을 꺼내기
+
+        console.log(student.name);
+        console.log(student["name"]);
+        // 키를 항상 문자열로 묶어야 합니다.
+
+
+        //프로퍼티에 들어있는 값을 수정하기
+        student.name = '홍길동'
+        console.log(student.name);
+
+        //객체에 없는 프로퍼티도 추가할 수 있다
+
+        student.height = 158
+        
+        //프로퍼티 삭제하기
+        delete student.name;
+
+        console.log(student);
+
+        console.log(`이름 존재 여부: ${'name ' in student }`)
+
+        for(const k in student){
+            console.log(`key = ${k} / value = ${student[k]}`)
+        }
+
+
+        
+
+        </script>
+</head>
+<body>
+    
+</body>
+</html>

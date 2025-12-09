@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js style</title>
+</head>
+<body>
+    <p id="p_id">
+        자바스크립트로 css 바꾸기 연습!
+    </p>
+    <script>
+        //스타일을 주기 위해 p태그를 선택해서 element라는 이름의
+        //변수에 대입해주세요
+
+        const element = document.querySelector('#p_id')
+        element.setAttribute('class', 'p_class')
+
+        console.log(element);
+
+        element.style.backgroundColor = 'lightblue';
+        element.style.color = 'red';
+        element.style.fontSize = '30px';
+        element.style.border = '5px solid pink';
+                                          
+
+
+
+    </script>
+</body>
+</html>

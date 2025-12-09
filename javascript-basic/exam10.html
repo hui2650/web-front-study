@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 슬라이드</title>
+</head>
+<body>
+    <div id="galleryWrap">
+
+			<p>
+				<button class="prev">←</button>
+
+				<img alt="갤려리" id="gallery" src="../img/dog1.jpg" width="300" height="200">
+
+				<button class="next">→</button>
+					
+			</p>
+
+	</div>
+    <script>
+        const img = document.querySelector('#gallery')
+        const prevBtn = document.querySelector('.prev')
+        const nextBtn = document.querySelector('.next')
+
+        //prevBtn 클릭하면 img주소 1개씩 줄이기 0이 되면 7로 돌아오기
+        //nextBtn 클릭하면 img주소 1개씩 늘리기 7이 되면 1로 돌아오기
+
+        // let count = 1;
+
+        // prevBtn.addEventListener('click', ()=>{
+        //     count --;
+        //     if(count === 0){
+        //         count = 5;
+        //     }
+        //     img.src = `https://picsum.photos/800/450?${count}`
+        // })
+        // nextBtn.addEventListener('click', ()=>{
+        //     count ++;
+        //     if(count === 6){
+        //         count = 1;
+        //     }
+        //     img.src = `https://picsum.photos/800/450?${count}`
+        // })
+
+        let count = 1;
+        const max = 7;
+
+        function updateImg() {
+            img.src = `../img/dog${count}.jpg`;
+        }
+
+        function goNext() {
+            count++;
+            if (count > max) count = 1;
+            updateImg();
+        }
+
+        function goPrev() {
+            count--;
+            if (count < 1) count = max;
+            updateImg();
+        }
+
+        // 버튼 클릭 이벤트
+        nextBtn.addEventListener('click', goNext);
+        prevBtn.addEventListener('click', goPrev);
+
+        // 자동 슬라이드 (3초마다)
+        setInterval(goNext, 2000);
+
+        
+
+
+
+    </script>
+</body>
+</html>

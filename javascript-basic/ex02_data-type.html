@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        // Number(숫자)
+
+        let num1 = 10;
+        let num2 = 3.14;                   
+        console.log(num1)
+        console.log(num2)
+
+        console.log('num1의 타입 : ' + typeof num1 )
+        console.log('num2의 타입 : ' + typeof num2 )
+
+        //Nan이 생기는 이유
+        //정수를 0으로 나눌 때
+        //숫자로 해석 불가능한 문자열을 수학연산 하려고 할 때
+        console.log(typeof 10/0)                           
+        
+        const name = '함태희'
+        
+        let msg = `안녕하세요 ${name}님`
+        
+        console.log('msg : ' + msg)
+
+        //boolean
+        //참과 거짓~
+        
+       let isAdult = true;
+       let isMinor = false;
+       
+       //undifined = 변수에 값이 없다~
+       //null = 의도적으로 비어있음
+
+       //bigint = 매우 큰 정수를 안전하게 표현할 때 사용
+       // 오차 없이 매우 큰 정수를 정확히 표현할 수 있다.
+
+       //bigint로 선언하는법: 숫자 뒤에 n붙이기
+       
+        let b = 9023423142134n;
+
+        console.log(b+2n)
+
+
+        //symbol 
+        //고유한 식별자를 만들 때 쓰는 특별한 원시값이다.
+        //괄호안에 들어가는 것은 특별한 의미X 그냥 주석같은거
+
+        const k1 = Symbol('id');
+        const k2 = Symbol('id');
+
+        console.log(typeof k1)
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

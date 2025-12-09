@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let month = 8;
+
+        switch(month){
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                console.log(`${month}월은 30일 까지 있습니다`)
+            break;
+            case 2 :
+                console.log(`${month}월은 28일 또는 28일까지 까지 있습니다`)
+            break;
+            default:
+                console.log(`${month}월은 31일 까지 있습니다`)
+        }
+
+        let year = 200;
+
+        let result = (year % 4 === 0 && year % 100 !== 0) ? '윤년' :
+                     ( year % 400 === 0 ) ? '윤년' : '평년'
+
+        console.log(`이번 년도는 ${result}입니다.`)
+
+
+
+        let menu = [
+            {name: '아메리카노',
+             price: 1500
+            },
+            {name: '카페라떼',
+             price: 2000
+            },
+            {name: '녹차라떼',
+             price: 1800
+            }
+        ]
+
+        const menuSelect = (menu)=>{
+            let input = prompt('고르시오 1.아아 2.카라 3.녹라')
+            
+              // 문자열 → 숫자로
+            let index = Number(input) - 1;
+
+            // 메뉴 객체 가져오기
+            
+            if(index < 0 || index >= menu.length) {
+                return '잘못된 번호입니다!';
+            }
+
+            const { name, price } = menu[index];
+
+            return `선택한 메뉴는 ${name}, 가격은 ${price}원 입니다.`;
+        }
+        
+        alert(menuSelect(menu))
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 아직 클릭하지 않은 링크를 의미 */
+        a:link {
+            color: #ff0000;
+        }
+        a:visited {
+            color: #9b59b6;
+        }
+        a:hover {
+            color: #e67e22;
+            text-decoration: none;
+        }
+        /* 누르고 있을때 */
+        a:active {
+            color: #e74c3c;
+        }
+        /* :link -> visited -> hover -> active */
+        /* 이 순서로 작성해야 예측 가능한 동작이 된다. */
+        
+        input:focus {
+            border: 2px solid rgb(0, 207, 0);
+            outline: none;
+        }
+        </style>
+</head>
+<body>
+    <h2>동적 의사 클래스</h2>
+    <a href="#">Example 링크</a><br/><br/>
+    <input type="text" placeholder="검색어를 입력하세요~"/>
+</body>
+</html>

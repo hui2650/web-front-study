@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>count</title>
+</head>
+<body>
+    <button id="btnAdd">증가시키기</button>
+    <button id="btnSub">감소시키기</button>
+    <p id="result"></p>
+</body>
+<script>
+
+    const btnAdd = document.querySelector('#btnAdd')
+    const btnSub = document.querySelector('#btnSub')
+    const result = document.querySelector('#result')
+
+    let count = 0;
+
+    // btnAdd.addEventListener('click', ()=>{
+    //     count ++;
+    //     result.innerText = count;
+    // })
+
+    // btnSub.addEventListener('click', ()=>{
+    //     count --;
+    //     result.innerText = count;
+    // })
+
+    const actions = {
+        btnAdd: () => count++,
+        btnSub: () => count--
+    };
+
+    function btnCount(e) {
+        actions[e.target.id]?.();
+        result.innerText = count;
+    }
+
+    btnAdd.addEventListener('click', btnCount);
+    btnSub.addEventListener('click', btnCount);
+
+    // function btnCount(){
+    //     switch(event.target.id){
+    //         case 'btnAdd':
+    //             count ++; 
+    //             break;
+    //         case 'btnSub':
+    //             count --;
+    //             break;
+    //     }
+    //     result.innerText = count;
+    // }
+
+    // btnAdd.addEventListener('click', btnCount)
+    // btnSub.addEventListener('click', btnCount)
+
+</script>
+</html>

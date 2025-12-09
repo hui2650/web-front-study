@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .p1 {
+            color: red;
+        }
+        #p2 {
+            color: rebeccapurple;
+        }
+        .d1 {
+            color: green;
+            font-size: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <p class="p1">속성선택자 실습중</p>
+    <p id="p2">속성선택자 실습중</p>
+    <p class="p2">속성선택자 실습중</p>
+    <div class="d1">
+        속성선택자 실습중
+    </div>
+    <button> 클릭</button>
+    <div>
+        속성선택자 실습중 
+    </div>
+<script>
+    const div = document.querySelector('.d1')
+    const btn = document.querySelector('button')
+
+    btn.addEventListener('click',  ()=>{
+        div.classList.toggle('d1');
+    })
+    
+
+</script>
+</body>
+</html>

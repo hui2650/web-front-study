@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div class="hi">
+        하이
+    </div>
+    <input type="text">
+    <script>
+
+        const hi = document.querySelector('.hi');
+        const input = document.querySelector('input[type=text]');
+
+        hi.addEventListener('click', ()=>{
+            alert('test')
+        })
+
+        //input태그가 value라는 속성을 가지고 있지 않다면
+        if(!input.hasAttribute('value')){
+            // value 속성을 만들고 hello라는 값을 넣어줘
+            input.setAttribute('value','hello')
+        }
+
+    </script>
+</body>
+</html>

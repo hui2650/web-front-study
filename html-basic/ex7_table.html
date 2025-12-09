@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    ul {
+        display: flex;
+        gap: 10px;
+    }
+    ul > li {
+        list-style: none;
+        background: #f2f2f2;
+        padding: 5px 20px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    ul > li:hover {
+        background: #dfdfdf;
+    }
+</style>
+<body>
+    <!-- style="list-style-type:
+      disc: 기본값
+      circle: 비워진 원
+      square: 사각형 점
+      none: 없음
+    -->
+    <ul style="list-style-type: disc;"> 
+        <li>태희</li>
+        <li>진수</li>
+    </ul>
+    <!--순서거 있는-->
+    <!-- type='
+    1: 숫자
+    A: 알파벳 대문자
+    a: 알파벳 소문자
+    I: 로마자 대문자
+    i: 로마자 소문자
+    ' -->
+    <ol type="1" start="1"  reversed> 
+        <li>예린</li>
+        <li>채연</li>
+        <li>가희</li>
+    </ol>
+
+    <ul>
+        <li><a href="#">개인뱅킹</a>
+            <ul>
+                <li>조회</li>
+                <li>이체</li>
+                <li>신규해지</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

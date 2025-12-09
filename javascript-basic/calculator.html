@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //사칙연산을 수행하는 calculator 객체 작성하기
+        //더하기, 빼기, 곱하기, 나누기
+        //덧셈 결과: 
+        //뺏셈 결과: 
+        //곱셈 결과: 
+        //나눗셈 결과: 
+
+        const calculator = {
+            add(x, y){
+                return x + y
+            },
+            sub(x, y){
+                return x - y
+            },
+            mul(x, y){
+               return x * y
+            },
+            div(x, y){
+               return x / y
+            }
+        }
+        console.log(calculator.add(3,5))
+        console.log(calculator.sub(5,3))
+        console.log(calculator.mul(3,5))
+        console.log(calculator.div(5,3))
+
+
+        //학생이름과 점수를 관리하고 평균을 구하는 student 객체 만들기
+        //프로퍼티
+        //name
+        //scores -> 빈배열이 들어감
+
+        //기능
+        //점수 추가하기 기능
+        //평균구하여 반환하는 기능
+        //이름과 평균점수를 출력하는 기능
+
+        const student = {
+            name: "taehui",
+            scores: [],
+            addScores(score){
+                this.scores.push(score)
+            },
+            avgReturn(){
+                // let sum = 0;
+
+                // for(let s of this.scores){
+                //     sum += s
+                // }
+                // return sum / this.scores.length;
+
+                //reduce 쓰는게 더 적합
+                const total = this.scores.reduce((acc, cur)=> acc + cur, 0)
+
+                return total / this.scores.length
+
+            },
+            nameScoreReturn(){
+                return `학생의 이름은 ${this.name}이며 평균 점수는 ${this.avgReturn()}입니다.`
+            }
+        }
+
+        student.addScores(90)
+        student.addScores(100)
+        student.addScores(70)
+        student.addScores(50)
+
+        console.log(student)
+        console.log(student.avgReturn())
+        console.log(student.nameScoreReturn())
+
+        //상품을 담고 총합을 계산하는 cart 객체 작성하기
+        //프로퍼티
+        //items -> 빈배열
+
+        //기능
+        //상품 추가하기 (이름과 가격)
+        //총 가격을 계산하여 반환하기
+
+        const cart = {
+            items : [],
+            addItems(name, price){
+                this.items.push({name, price})
+            },
+            sumReturn(){
+                // let sum = 0;
+                
+                //배열 안의 객체에 접근 item은 items 안의 객체{...}
+                //여기서 item.price 하면 가격만 딱 잡음
+                // for(let item of this.items){
+                //     sum += item.price
+                // }
+                // return sum;
+
+                //reduce 쓰는게 더 적합
+               return this.items.reduce((acc, item)=> acc + item.price ,0)
+
+            },
+             showItems(){
+                console.log('담긴 상품');
+                this.items.forEach((item)=>{
+                    console.log(`${item.name} - ${item.price}`)
+                })
+                console.log(`총합: ${this.sumReturn()}`)
+             }
+        }
+
+        cart.addItems('코트', 250000)
+        cart.addItems('틴트', 8000)
+        cart.addItems('향수', 49900)
+        cart.addItems('과자', 2500)
+
+        cart.showItems();
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

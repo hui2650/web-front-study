@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 콟백함수
+        // 다른 함수에 '매개변수로' 전달되어 나중에 실행되는 함수
+
+        //매개변수: 외부에서 값을 받아 함수 내부로 전달하는 변수
+
+        function doTask(f1, f2){
+            console.log("1. 작업을 시작했다.")
+            f1();
+            f2();
+        }
+
+        //함수: 기는을 정의하는 부분, 기능을 사용허기 위해 호출하는 부분
+        function f1(){
+            console.log("2. 작업 중...")
+        }
+        function f2(){
+            console.log("3. 작업이 끝났다")
+        }
+
+        // 함수를 사용하기 위해 호출하는 법
+        // 함수명();
+
+        //뒤에 ()는 붙이지 않는다.
+        doTask(f1,f2);
+
+        let foods = ["떡볶이", "햄버거", "초밥"]
+
+        foods.forEach((x, y)=>{
+            console.log(`${y+1}번째 메뉴: ${x}`)                 
+        })
+
+        //직접 만든 함수에 콜백 전달하기
+
+        function calc(a, b, callback){
+            const result = callback(a, b);
+            console.log(`결과 : ${result}`)
+        }
+
+        //덧셈
+        let add = (x, y) => x + y; 
+        
+        //뺄셈
+        let sub = (x, y) => x - y;
+        
+        //곱셈
+        let mul = (x, y) => x * y; 
+
+
+        calc(10, 5, add)
+        calc(10, 8, sub)
+        calc(10, 3, mul)
+        
+
+
+
+
+    </script>
+</body>
+</html>

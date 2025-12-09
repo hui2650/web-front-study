@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+    <style type="text/css">
+		li {
+            list-style: none;
+			float:left;
+			margin-left:10px;
+        }
+		ul {
+            overflow:hidden;
+        }
+		input {
+            border-style:none;
+        }
+	</style>
+</head>
+<body>
+    <table border = "1">
+        <tr>
+            <th class="su">수1</th>
+            <td><input id="su1" placeholder="정수만 입력하세요"></td>
+        </tr>
+
+        <tr>
+            <th class="su">수2</th>
+            <td><input id="su2" placeholder="정수만 입력하세요"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <ul class="cal--list">
+                    <li>
+                        <input type="button" value="+">
+                    </li>
+                    <li>
+                        <input type="button" value="-">
+                    </li>
+                    <li>
+                        <input type="button" value="*"">
+                    </li>
+                    <li>
+                        <input type="button" value="/">
+                    </li>
+                </ul>
+            </td>
+        </tr>
+                <tr>
+                    <th>결과</th>
+                    <td><input id="result"></td>
+                </tr>
+</table>
+<script>
+    const cal = document.querySelectorAll('.cal--list input') 
+    const result = document.querySelector('#result')
+    const input1 = document.querySelector('#su1') 
+    const input2 = document.querySelector('#su2')
+
+    const calList = {
+        '+'(x,y){
+            return x + y
+        },
+        '-'(x,y){
+            return x - y
+        },
+        '*'(x,y){
+            return  x * y
+        },
+        '/'(x,y){
+            return  x / y
+        }
+    }
+    cal.forEach(x=>
+        x.addEventListener('click', ()=>{
+            let num1 = Number(input1.value)
+            let num2 = Number(input2.value)
+
+            const op = x.value; //+, -, *, /
+
+            result.value = calList[op](num1, num2); 
+        }) 
+    )
+</script>
+</body>
+</html>

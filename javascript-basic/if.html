@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        //농구공이 25개 있다. 
+        //한 박스에 4개씩 담을 수 있을 때 필요한 박스의 갯수를 구하시오
+
+        let ball = 25;
+
+        let box = parseInt( ball % 4 === 0 ?  ball / 4 : ball / 4 + 1 )
+        
+        console.log(`박스의 갯수: ${box}개`)
+
+
+        //나이에 따라 티켓 가격이 출력되는 코드 작성하기
+        //학생은 20% 할인된 가격
+        //성인은 정가
+
+        let age = 21;
+        let ticketPrice = 12000;
+
+        let result = ( age < 19 ) ? ticketPrice = ticketPrice*0.8 : ticketPrice;
+        
+        console.log(`${age}살의 티켓 가격은 ${result}원 입니다.~ `)
+
+        //주문 금액이 3만원 이상이거나 VIP회원이면 무료배송이다
+        //무료배송 여부를 불리언 값으로 나타내시오
+
+        let price = 31000;
+        let freeDeliveryLimit = 30000;
+        let vip = false;
+
+        let isFree = price >= freeDeliveryLimit || vip
+        
+        console.log(isFree)
+
+        //현재 온도가 28도 이상이면 에어컨 작동
+        //18도 이하면 '난방 작동'
+        //그 사이면 대기 상태
+
+        let temperature = 23;
+
+        let isWork = temperature >=28 ? '에어컨 작동' : 
+                     temperature <=18 ? '난방 작동' : '대기 상태';
+
+        console.log(`현재 온도는 ${temperature}도이며 ${isWork}중 입니다.`);
+
+        let fruit = "banana";
+
+        switch (fruit) {
+        case "apple":
+            console.log("사과를 선택했습니다.");
+            break;
+        case "banana":
+            console.log("바나나를 선택했습니다.");
+            break;
+        case "orange":
+            console.log("오렌지를 선택했습니다.");
+            break;
+        default:
+            console.log("기타 과일입니다.");
+            break;
+        }
+
+        //때로는 일부러 break를 생략해 여러 case를 하나로 묶는 용도로 쓴다.
+        let day = "토요일";
+
+        switch (day) {
+        case "토요일":
+        case "일요일":
+            console.log("주말입니다!");
+            break;
+        default:
+            console.log("평일입니다!");
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

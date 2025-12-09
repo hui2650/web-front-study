@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            border: 2px dashed #333;
+            width: 800px;
+            height: 120px;
+        }
+        .item {
+            border: 2px solid black;
+            box-sizing: border-box;
+            margin: 5px;
+            padding: 10px 0;
+            text-align: center;
+            margin: 5px;
+        }
+        /* flex 아이템의 기본 크기를 정할 때 사용 */
+        .a {
+            flex-basis: 100px;
+        }
+        .b {
+            flex-basis: 200px;
+        }
+        .c {
+            flex-basis: 300px;
+        }
+        
+    </style>
+</head>
+<body>
+    <h2>flex-basis</h2>
+    <div class="container">
+        <div class="item a">1</div>
+        <div class="item b">2</div>
+        <div class="item c">3</div>
+    </div>
+</body>
+</html>

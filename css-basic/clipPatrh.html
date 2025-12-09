@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clipPath</title>
+    <style>
+    .reveal {
+        position: relative;
+        width: 360px;
+        border-radius: 14px;
+        overflow: hidden;
+        isolation: isolate;
+    }
+    .reveal img { width:100%; display:block; aspect-ratio: 16/10; object-fit: cover; }
+
+    .reveal .content {
+        position:absolute; inset:0;
+        display:grid; place-content:end start;
+        padding:16px;
+        color:#fff;
+        background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,.7));
+        /* background: red; */
+         clip-path: polygon(
+            0% 0%,
+            0% 0%,
+            0% 100%,
+            0% 100%
+        );
+        transition: clip-path .5s ease;
+    }
+    .reveal:hover .content {
+          clip-path: polygon(
+            0% 0%,
+            100% 0%,
+            100% 100%,
+            0% 100%
+        );
+    }
+
+
+
+    </style>
+</head>
+<body>
+   <article class="reveal">
+        <img src="https://picsum.photos/800/450?random=2" alt="">
+        <div class="content">
+            <h3>Reveal Card</h3>
+            <p>clip-path로 마스크 애니메이션</p>
+        </div>
+    </article>
+</body>
+</html>

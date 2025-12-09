@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* 입력 가능한 input에 배경색 */
+        input:enabled {
+            background-color: #ecf0f1;
+        }
+        /* 입력 불가능한 input에 배경색 */
+        input:disabled {
+            background-color: #bdc8c7;
+        }
+        /* 체크된 input태그와 인접해있는 label에게 글씨색을 초록색으로~ */
+        input:checked + label {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h2>상태 의사 클래스</h2>
+    <input id="chk1" type="checkbox">
+    <!-- for 속성으로 체크박스을 위한 라벨임을 알려줌~~ -->
+    <label for="chk1">동의합니다.</label>
+    <br>
+    <input id="chk2" type="checkbox">
+    <!-- for 속성으로 체크박스을 위한 라벨임을 알려줌~~ -->
+    <label for="chk2 ">동의하지 않습니다.</label>
+
+    <br><br>
+
+    <input type="text" placeholder="입력가능">
+
+    <!-- value : 실제 input 태그에 들어가는 값 -->
+
+    <input disabled value="비활성화됨">
+
+</body>
+</html>

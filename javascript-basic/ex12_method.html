@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //메서드
+        //객체 안에서 정의된 함수
+        //호출될 때 여타 다른 프로퍼티처럼 객체명.메서드명()을 이용해 호출을 해야 한다.
+
+        //메서드 생성 방법
+        let person = {
+            name: "홍길동",
+            age: 20,
+
+            //메서드의 정의
+            // introduce : function() {
+            //     console.log(`안녕하세요 저는 ${this.name}이고 나이는 ${this.age}살 입니다.`)
+            // }
+
+            //축약형
+            introduce(){
+                console.log(`안녕하세요 저는 ${this.name}이고 나이는 ${this.age}살 입니다.`)
+            }
+        }
+
+        //메서드를 사용하기 위한 호출
+        person.introduce();
+
+        //메서드 안의 변수에서 this를 써야 하는 이유
+        // this를 작성하지 않으면 name과 age라는 변수를 찾는다.
+        // 프로퍼티는 변수가 아니라서 name과 age라는 변수는 없다고 생각을 한다 *(undifined)
+        //호출한 객ㄹ체 자신을 의미하는 this를 붙여줘야 name과 age가 프로퍼티의 값을 출력
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="p"></p>
+    <button id="btn">랜덤 명언 출력</button>
+  </body>
+  <script>
+    const btn = document.querySelector("#btn");
+    const p = document.querySelector("#p");
+
+    btn.addEventListener("click", () => {
+      fetch("https://api.adviceslip.com/advice")
+        .then((res) => {
+          if (!res.ok) {
+            throw new Error("데이터를 불러오지 못했습니다");
+          }
+          return res.json();
+        })
+        .then((data) => {
+          p.innerText = data.slip.advice;
+        })
+        .catch((e) => {
+          console.log(e);
+        });
+    });
+  </script>
+</html>

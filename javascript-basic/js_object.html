@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const coffee = "ice americano";
+
+        coffee.length; // 문자 길이
+        coffee.includes("ice"); // 역할:포함 여부, 결과값:boolean
+        coffee.repeat(5); // 역할:문자 반복, 결과값:string
+        coffee.replace("i", "a"); // 역할:바꾸기 (얜 첫번째꺼만 바꿔줌)  , 결과값:string 
+        coffee.replaceAll("i", "a"); // 역할:모두 바꾸기   , 결과값:string
+        coffee.slice(0, 5); // 역할:자르기(0~4)   , 결과값:string
+        coffee.indexOf("ri"); // 역할:몇번째 찾기   , 결과값:number 
+        coffee.startsWith("ice"); // 역할:시작 여부     , 결과값:boolean
+        coffee.endsWith("z"); // 역할:끝 여부       , 결과값:boolean
+        coffee.toUpperCase(); // 역할:대문자화      , 결과값:string
+        coffee.toLocaleLowerCase(); // 역할:소문자화      , 결과값:string
+        coffee.split("am"); // 역할:찢기          , 결과값:array
+
+
+        console.log("원본:", coffee);
+        console.log("length:", coffee.length);
+        console.log("includes('ice'):", coffee.includes("ice"));
+        console.log("repeat(2):", coffee.repeat(2));
+        console.log("replace('i','a'):", coffee. replace("i", "a"));
+        console.log("replaceAll('i','a'):", coffee.replaceAll("i", "a"));
+        console.log("slice(0,5):", coffee.slice(0, 5));
+        console.log("indexOf('ri'):", coffee.indexOf("ri"));
+        console.log("startsWith('ice'):", coffee.startsWith("ice"));
+        console.log("endsWith('z'):", coffee.endsWith("z"));
+        console.log("toUpperCase():", coffee.toUpperCase());
+        console.log("toLowerCase():", coffee.toLowerCase());
+        console.log("split('am'):", coffee.split("am"));
+
+        const num = [1, 2, 3, 4 ,5]
+
+        const d = num.map((x)=> String(x)).reduce((a, c)=> a + c)
+
+        const e = num.join('');  
+        
+        console.log(d, e)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
