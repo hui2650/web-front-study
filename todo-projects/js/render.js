@@ -7,6 +7,7 @@ const emptyText = document.querySelector(".empty-text");
  * TODO(할일) 렌더링하기
  */
 export function renderTodoList(todos, { onUpdate, onDelete }) {
+  //todos = result.data 그 자체!
   // 기존에 있던 모든 요소 li 제거 (재랜더링)
   todoList.innerHTML = "";
 
@@ -102,7 +103,7 @@ export function renderTodoList(todos, { onUpdate, onDelete }) {
     deleteBtn.className = "delete-btn";
     deleteBtn.textContent = "삭제";
 
-    // 삭제버튼 클릭시 deleteTodo 함수 호출 (todo data의 id를 넘겨줌)
+    // 삭제버튼 클릭시 onDelete 호출
     deleteBtn.addEventListener("click", () => {
       onDelete(todo.id);
     });
