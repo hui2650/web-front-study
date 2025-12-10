@@ -60,7 +60,7 @@ ul.todo-list > li.todo-item {
   display: flex;
   justify-content: space-between;
   background: #f1f1f1;
-  padding: 0 10px 0;
+  padding: 10px;
   border-radius: 8px;
 }
 li.todo-item > .todo-left {
@@ -75,4 +75,6 @@ li.todo-item > .delete-btn {
 }
 
 .todo-text.done {
+  color: #888;
+  text-decoration: line-through;
 }

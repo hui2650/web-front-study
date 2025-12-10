@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>TodoList</title>
     <link rel="stylesheet" href="./style.css" />
-    <script src="./index.js" defer></script>
+    <script type="module" src="./js/main.js" defer></script>
+    <script type="module" src="./js/render.js" defer></script>
+    <script type="module" src="./js/api.js" defer></script>
   </head>
   <body>
     <section class="todo">
@@ -22,27 +24,7 @@
           </div>
         </div>
         <ul class="todo-list">
-          <!-- <li>
-            <div class="check-group">
-              <input type="checkbox" name="" id="" />
-              <p>공부하기</p>
-            </div>
-            <button class="delete-btn">삭제</button>
-          </li>
-          <li>
-            <div class="check-group">
-              <input type="checkbox" name="" id="" />
-              <p>집에 가기</p>
-            </div>
-            <button class="delete-btn">삭제</button>
-          </li>
-          <li>
-            <div class="check-group">
-              <input type="checkbox" name="" id="" />
-              <p>저녁 먹기</p>
-            </div>
-            <button class="delete-btn">삭제</button>
-          </li> -->
+          <!-- li 불러올 예정 -->
         </ul>
         <p class="empty-text">아직 등록된 할 일이 없습니다.</p>
       </div>
