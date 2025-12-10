@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #e7e7e7;
+}
+#product {
+  max-width: 1100px;
+  background: #fff;
+  border-radius: 1px solid #eee;
+  border-radius: 18px;
+  box-shadow: 4px 4px 16px rgba(131, 131, 131, 0.3);
+  /* overflow: hidden; */
+  margin: 40px auto;
+  padding: 60px 24px 24px;
+}
+.product-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.product-wrap > hr {
+  border: 0;
+  border-top: 1px solid #ddd;
+  margin-bottom: 16px;
+}
+.product-add {
+  background: #ddd;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 40px 15px 25px;
+}
+.product-add > h2 {
+  margin-bottom: 25px;
+}
+.product-add > .product-add-input {
+  display: flex;
+  gap: 12px;
+}
+.product-add > .product-add-input > input {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 8px 0 8px 8px;
+  font-size: 16px;
+}
+.product-add > .product-add-input > .add-btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  background: rgb(60, 196, 60);
+  color: #fff;
+  box-shadow: 2px 2px 2px rgba(1, 1, 1, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.product-table {
+  width: 100%;
+  border-spacing: 0px;
+}
+/* 테두리/패딩 */
+.product-table th,
+.product-table td {
+  border: 1px solid #ddd;
+  padding: 12px 6px;
+  font-size: 0.95rem;
+}
+.product-table thead {
+  background-color: #424fff;
+  color: #fff;
+}
+.no-data {
+  text-align: center;
+}

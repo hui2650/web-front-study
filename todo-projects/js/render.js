@@ -8,6 +8,7 @@ const emptyText = document.querySelector(".empty-text");
  */
 export function renderTodoList(todos, { onUpdate, onDelete }) {
   //todos = result.data 그 자체!
+
   // 기존에 있던 모든 요소 li 제거 (재랜더링)
   todoList.innerHTML = "";
 

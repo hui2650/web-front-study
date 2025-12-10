@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <section id="product">
+      <div class="product-wrap">
+        <h1>📦 상품 관리 클라이언트</h1>
+        <hr />
+        <div class="product-add">
+          <h2>상품 등록</h2>
+          <div class="product-add-input">
+            <input type="text" placeholder="상품 이름" />
+            <input type="text" placeholder="상품 재고" />
+            <input type="text" placeholder="상품 가격" />
+            <button class="add-btn">등록</button>
+          </div>
+        </div>
+        <table class="product-table">
+          <thead>
+            <tr>
+              <th>상품 번호</th>
+              <th>상품 이름</th>
+              <th>상품 재고</th>
+              <th>상품 가격</th>
+              <th>등록 날짜</th>
+              <th>수정 날짜</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="6" class="no-data">
+                상품 목록을 불러올 수 없습니다. 서버("http://localhost:8080")가
+                실행 중인지 확인하세요
+              </td>
+              <!-- <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td> -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </body>
+</html>
