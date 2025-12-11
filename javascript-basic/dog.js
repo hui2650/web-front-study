@@ -26,19 +26,3 @@ async function loadDog() {
 btn.addEventListener("click", loadDog);
 
 loadDog();
-
-// btn.addEventListener("click", () => {
-//   fetch("https://dog.ceo/api/breeds/image/random")
-//     .then((res) => {
-//       if (!res.ok) {
-//         throw new Error("데이터 불러오기 실패");
-//       }
-//       return res.json(); //json 형태로 변환
-//     })
-//     .then((data) => {
-//       img.src = data.message;
-//     })
-//     .catch((e) => {
-//       console.log(e);
-//     });
-// });

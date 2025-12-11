@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Product</title>
     <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./js/main.js" defer></script>
+    <script type="module" src="./js/api.js" defer></script>
+    <script type="module" src="./js/crud.js" defer></script>
   </head>
   <body>
     <section id="product">
@@ -13,12 +16,27 @@
         <hr />
         <div class="product-add">
           <h2>상품 등록</h2>
-          <div class="product-add-input">
-            <input type="text" placeholder="상품 이름" />
-            <input type="text" placeholder="상품 재고" />
-            <input type="text" placeholder="상품 가격" />
-            <button class="add-btn">등록</button>
-          </div>
+          <form class="product-add-form">
+            <input
+              id="product-name"
+              name="product-name"
+              type="text"
+              placeholder="상품 이름"
+            />
+            <input
+              id="product-stock"
+              name="product-stock"
+              type="text"
+              placeholder="상품 재고"
+            />
+            <input
+              id="product-price"
+              name="product-price"
+              type="text"
+              placeholder="상품 가격"
+            />
+            <button type="submit" class="add-btn">등록</button>
+          </form>
         </div>
         <table class="product-table">
           <thead>
@@ -31,20 +49,7 @@
               <th>수정 날짜</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td colspan="6" class="no-data">
-                상품 목록을 불러올 수 없습니다. 서버("http://localhost:8080")가
-                실행 중인지 확인하세요
-              </td>
-              <!-- <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td> -->
-            </tr>
-          </tbody>
+          <tbody class="product-table-body"></tbody>
         </table>
       </div>
     </section>
