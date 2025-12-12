@@ -1,8 +1,10 @@
 import { apiFetch } from "./api.js";
-import { fetchProduct, addProduct, fetchOrders } from "./crud.js";
+import { fetchProduct, addProduct, fetchOrders, OrderProduct } from "./crud.js";
 
 const addBtn = document.querySelector(".add-btn");
 const fetchOrderBtn = document.querySelector("#fetch-order-btn");
+const orderBtn = document.querySelector("#order-btn");
+
 // 초기화 함수
 document.addEventListener("DOMContentLoaded", () => {
   // 목록조회
@@ -22,4 +24,7 @@ addBtn.addEventListener("click", () => {
 fetchOrderBtn.addEventListener("click", () => {
   // 주문내역
   fetchOrders(apiFetch);
+});
+orderBtn.addEventListener("click", () => {
+  OrderProduct(apiFetch);
 });

@@ -1,3 +1,5 @@
+import { apiFetch } from "./api";
+
 const productName = document.querySelector("#product-name");
 const productStock = document.querySelector("#product-stock");
 const productPrice = document.querySelector("#product-price");
@@ -48,7 +50,7 @@ function renderProductTable(data) {
             <input 
               type="radio" 
               name="selectedProduct" 
-              value="${product.name}"
+              value="${product.id}"
             />
           </td>
           <td>
@@ -75,6 +77,10 @@ function renderProductTable(data) {
 
   // tbody 안에 넣어주기
   productTableBody.innerHTML = rows;
+
+  document.querySelectorAll("input[name=selectedProduct]").forEach((radio) => {
+    radio.addEventListener("change", radioChange);
+  });
 }
 
 // 상품을 추가하는 addProduct 함수
@@ -154,4 +160,63 @@ function renderOrderTable(data) {
   orderTableBody.innerHTML = rows;
   orderMessage.innerHTML = `총 ${data.length}건의 주문 내역이 조회되었습니다.`;
   orderMessage.style.color = rgb(66, 190, 66);
+}
+
+// 라디오버튼 변경 처리 함수
+function radioChange(event) {
+  document.querySelectorAll(".order-count-input").forEach((input) => {
+    input.disabled = true;
+    input.value = "";
+  });
+
+  // 선택된 라디오 버튼의 상품 id를 가져온다
+  const selectedProductId = event.target.value;
+
+  // 선택된 상품 ID에 해당하는 입력 필드를 찾아서 활성화
+  const selectedInput = document.querySelector(
+    `#orderCount-${selectedProductId}`
+  );
+  if (selectedInput) {
+    selectedInput.disabled = false;
+    // 입력 필드를 포커스하여 사용자 입력 대기
+    selectedInput.focus();
+  }
+}
+
+// 상품 주문하기 함수
+export async function OrderProduct() {
+  //체크된 라디오버튼을 찾는다
+  const selectedRadio = document.querySelector(
+    'input[name="selectedProduct":checked'
+  );
+  if (!selectedRaido) {
+    orderMessage.innerHTML = "주문할 상품을 선택해주세요.";
+    orderMessage.style.color = "orange";
+    return;
+  }
+  // 서버로 넘기기 위한 데이터를 가져옴
+  const productId = selectedRadio.value;
+  const orderInput = document.querySelector(`#orderCount-${productId}`);
+  const productCount = parseInt(orderInput, 10); // 입력한 갯수를 문자열 -> 숫자로 변환
+
+  // 진짜 숫자를 입력했는지, 음수를 입력했는지 조사
+  if (isNaN(productCount || productCount < 0)) {
+    orderMessage.innerHTML = "유효한 주문 개수를 입력해주세요 (1 이상)";
+    orderMessage.style.color = "orange";
+    return;
+  }
+
+  //서버에 보낼 데이터
+  const orderData = {
+    productId: productId,
+    productCount: productCount,
+  };
+
+  orderMessage.innerHTML = "주문 처리중...";
+  orderMessage.style.color = "#424fff";
+
+  try {
+    // 서버에 요청
+    const updateProducts = await apiFetch();
+  } catch (error) {}
 }
