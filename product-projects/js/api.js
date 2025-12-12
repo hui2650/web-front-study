@@ -1,10 +1,9 @@
 // 서버의 주소와 포트를 명시한다
 export const BASE_URL = "http://localhost:8080";
-export const API_URL = "/product";
 
 // 범용 api fetch 함수 응답상태 확인하고 json 데이터를 파싱하여 반환
 export async function apiFetch(endpoint, options) {
-  const url = BASE_URL + API_URL + endpoint;
+  const url = BASE_URL + endpoint;
   try {
     // fetch 요청을 한다
     const response = await fetch(url, options);
@@ -21,5 +20,6 @@ export async function apiFetch(endpoint, options) {
     return result.data;
   } catch (error) {
     console.log("API 호출 중 오류 발생 : " + error.message);
+    throw error;
   }
 }
