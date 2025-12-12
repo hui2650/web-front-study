@@ -11,11 +11,11 @@
   </head>
   <body>
     <section id="product">
+      <h1>📦 상품 관리 클라이언트</h1>
+      <hr />
       <div class="product-wrap">
-        <h1>📦 상품 관리 클라이언트</h1>
-        <hr />
         <div class="product-add">
-          <h2>상품 등록</h2>
+          <h2 class="h2-title">상품 등록</h2>
           <form class="product-add-form">
             <input
               id="product-name"
@@ -35,12 +35,15 @@
               type="text"
               placeholder="상품 가격"
             />
-            <button type="submit" class="add-btn">등록</button>
+            <button type="button" class="add-btn">등록</button>
           </form>
+          <div id="product-message"></div>
         </div>
-        <table class="product-table">
+        <table class="table-st">
           <thead>
             <tr>
+              <th>단일 선택</th>
+              <th>주문 개수</th>
               <th>상품 번호</th>
               <th>상품 이름</th>
               <th>상품 재고</th>
@@ -50,6 +53,30 @@
             </tr>
           </thead>
           <tbody class="product-table-body"></tbody>
+        </table>
+      </div>
+      <div class="order-btn-wrap">
+        <button id="ordeer-btn">주문하기</button>
+        <button id="fetch-order-btn">주문내역</button>
+      </div>
+      <div class="order-wrap">
+        <h2 class="h2-title">🛒 주문 내역</h2>
+        <div id="order-message">주문 내역 버튼을 눌러주세요</div>
+        <table class="table-st">
+          <thead>
+            <tr>
+              <th>상품 내역</th>
+              <th>상품 가격</th>
+              <th>주문 개수</th>
+              <th>결제 금액</th>
+              <th>주문 날짜</th>
+            </tr>
+          </thead>
+          <tbody class="order-table-body">
+            <tr>
+              <td colspan="6">주문내역 로딩중...</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </section>
